@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaiAgro - Expert Agriculture Consultancy and Products</title>
+    <meta name="description" content="PaiAgro provides expert agriculture consultancy and offers quality agricultural products for sale. Enhance your farming with our professional services and top-notch products.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --theme-color: #127f2b;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --light-green: #e6f7e6;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--theme-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--theme-color);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(rgba(14, 113, 37, 0.7), rgba(15, 82, 31, 0.7)), url('/api/placeholder/800/600') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 150px 0 100px;
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        /* Features Section */
+        #features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light-green);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--theme-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Gallery Section */
+        #gallery {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        .testimonial-item {
+            background-color: var(--light-green);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        #cta {
+            background-color: var(--theme-color);
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+        #cta h2 {
+            margin-bottom: 2rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 5rem 0;
+            background-color: var(--bg-color);
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+ /* Our People Section */
+ #our-people {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .people-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--light-green);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .people-item:hover {
+            transform: translateY(-5px);
+        }
+        .people-photo {
+            width: 200px;
+            height: 250px;
+            border-radius: 10%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .people-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .people-role {
+            font-style: italic;
+            color: var(--theme-color);
+        }
+        
+        /* ... (rest of the styles remain the same) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">PaiAgro</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Welcome to PaiAgro</h1>
+                <p>Expert agriculture consultancy and quality products for your farming needs</p>
+                <a href="#contact" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2>Our Services</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-seedling feature-icon"></i>
+                        <h3>Crop Consultancy</h3>
+                        <p>Expert advice on crop selection and management</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-tractor feature-icon"></i>
+                        <h3>Farm Equipment</h3>
+                        <p>Quality farming equipment for sale and rent</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf feature-icon"></i>
+                        <h3>Sustainable Practices</h3>
+                        <p>Guidance on eco-friendly farming methods</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2>Our Products</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="/api/placeholder/400/300" alt="Farm field">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/api/placeholder/400/300" alt="Modern tractor">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/api/placeholder/400/300" alt="Organic produce">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/api/placeholder/400/300" alt="Irrigation system">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ... (header and previous sections remain the same) ... -->
+
+    <section id="our-people">
+        <div class="container">
+            <h2>Our People</h2>
+            <div class="people-grid">
+                <div class="people-item">
+                    <img src="maggie.jpg" alt="Mary Grace Saldajeno" class="people-photo">
+                    <p class="people-name">Mary Grace Saldajeno</p>
+                    <p class="people-role">Agricultural Consultant</p>
+                </div>
+                <div class="people-item">
+                    <img src="Ravi.jpg" alt="Jane Smith" class="people-photo">
+                    <p class="people-name">Sudershan Ravi</p>
+                    <p class="people-role">Sustainability Advisor</p>
+                </div>
+                <!--<div class="people-item">
+                    <img src="/api/placeholder/150/150" alt="Mike Johnson" class="people-photo">
+                    <p class="people-name">Mike Johnson</p>
+                    <p class="people-role">Farm Equipment Expert</p>
+                </div>
+                <div class="people-item">
+                    <img src="/api/placeholder/150/150" alt="Emily Brown" class="people-photo">
+                    <p class="people-name">Emily Brown</p>
+                    <p class="people-role">Crop Specialist</p>
+                </div>
+            -->
+            </div>
+        </div>
+    </section>
+
+
+        <section id="cta">
+            <div class="container">
+                <h2>Ready to Enhance Your Farming?</h2>
+                <a href="#contact" class="btn">Contact Us Today</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <form action="https://formsubmit.co/el/beruho" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PaiAgro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
